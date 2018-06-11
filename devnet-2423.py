@@ -152,3 +152,8 @@ def get_inactive_sensors(sensors):
 
 # establish a global connection
 rc = connect()
+
+# step 1 - get the sensor details
+sensors = get_sensors()
+sensors = get_inactive_sensors(sensors)
+

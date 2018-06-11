@@ -170,3 +170,9 @@ for sensor in sensors:
 # step 3 - get the application policy
 app = get_application(APP_ID)
 
+# step 4 - loop through the application policy entries
+print "\n\nThe application", app['name'], "has the following policies:"
+for policy in app['policies']:
+    print " ", policy['action'], policy['consumer_filter_name'], '-->', policy[
+        'provider_filter_name']
+

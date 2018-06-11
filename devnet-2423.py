@@ -148,3 +148,7 @@ def mark_as_inactive(ip):
 
 def get_inactive_sensors(sensors):
     return filter(lambda s: s['inactive'], sensors.values())
+
+
+# establish a global connection
+rc = connect()

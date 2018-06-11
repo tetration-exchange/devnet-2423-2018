@@ -157,3 +157,13 @@ rc = connect()
 sensors = get_sensors()
 sensors = get_inactive_sensors(sensors)
 
+# step 2 - loop through the sensors that are inactive and mark
+# each interface address as inactive
+print "Inactive sensors: "
+for sensor in sensors:
+    print " ", sensor["hostname"]
+    for interface in sensor["interfaces"]:
+        print "   marking interface inactive: {: <16} ✅".format(
+            interface['ip'])
+        mark_as_inactive(interface["ip"])
+
